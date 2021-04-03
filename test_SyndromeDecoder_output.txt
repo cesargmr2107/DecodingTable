@@ -1,0 +1,114 @@
+====================================================================================================
+
+TESTING 'SyndromeDecoder'
+
+----------------------------------------------------------------------------------------------------
+
+2.4.4. TESTING TRIPLE PARITY CODE
+
+----------------------------------------------------------------------------------------------------
+
+Code source words:
+ [[0 0 0]
+ [0 0 1]
+ [0 1 0]
+ [0 1 1]
+ [1 0 0]
+ [1 0 1]
+ [1 1 0]
+ [1 1 1]] 
+
+Code generator matrix:
+ [[1 0 0 1 1 0]
+ [0 1 0 1 0 1]
+ [0 0 1 0 1 1]] 
+
+Parity control matrix:
+ [[1 1 0 1 0 0]
+ [1 0 1 0 1 0]
+ [0 1 1 0 0 1]] 
+
+Generated decoding table:
+[0 0 0] [0 0 0 0 0 0]
+[0 0 1] [0 0 0 0 0 1]
+[0 1 0] [0 0 0 0 1 0]
+[1 0 0] [0 0 0 1 0 0]
+[0 1 1] [0 0 1 0 0 0]
+[1 0 1] [0 1 0 0 0 0]
+[1 1 0] [1 0 0 0 0 0]
+[1 1 1] [0 0 1 1 0 0]
+
+Decoder Stats:
+- Time spent generating table:  0.001999378204345703 s
+- Size occupied by table in RAM: 360 B
+- Table entries: 16
+
+Testing decoding process:
+
+Decoding...  [1 0 0 0 1 0]
+- Class / Syn-Class:  [1 0 0]-[0 0 0 1 0 0]
+- Word:  [1 0 0 1 1 0]
+- Time spent decoding: 0.0 s
+Decoding...  [1 0 1 0 0 0]
+- Class / Syn-Class:  [1 0 1]-[0 1 0 0 0 0]
+- Word:  [1 1 1 0 0 0]
+- Time spent decoding: 0.0010001659393310547 s
+Decoding...  [1 0 0 0 0 1]
+- Class / Syn-Class:  [1 1 1]-[0 0 1 1 0 0]
+- Word:  [1 0 1 1 0 1]
+- Time spent decoding: 0.0 s
+
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+
+2.4.5. TESTING (5,3)-LINEAL CODE
+
+----------------------------------------------------------------------------------------------------
+
+Code source words:
+ [[0 0 0]
+ [0 0 1]
+ [0 1 0]
+ [0 1 1]
+ [1 0 0]
+ [1 0 1]
+ [1 1 0]
+ [1 1 1]] 
+
+Code generator matrix:
+ [[1 0 0 1 1]
+ [0 1 0 1 0]
+ [0 0 1 0 1]] 
+
+Parity control matrix:
+ [[1 1 0 1 0]
+ [1 0 1 0 1]] 
+
+Generated decoding table:
+[0 0] [0 0 0 0 0]
+[0 1] [0 0 0 0 1]
+[1 0] [0 0 0 1 0]
+[1 1] [1 0 0 0 0]
+
+Decoder Stats:
+- Time spent generating table:  0.0 s
+- Size occupied by table in RAM: 232 B
+- Table entries: 8
+
+Testing decoding process:
+
+Decoding...  [0 0 1 1 0]
+- Class / Syn-Class:  [1 1]-[1 0 0 0 0]
+- Word:  [1 0 1 1 0]
+- Time spent decoding: 0.0 s
+Decoding...  [1 1 1 1 1]
+- Class / Syn-Class:  [1 1]-[1 0 0 0 0]
+- Word:  [0 1 1 1 1]
+- Time spent decoding: 0.0 s
+Decoding...  [0 1 1 0 0]
+- Class / Syn-Class:  [1 1]-[1 0 0 0 0]
+- Word:  [1 1 1 0 0]
+- Time spent decoding: 0.0 s
+
+----------------------------------------------------------------------------------------------------
